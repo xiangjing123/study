@@ -1,0 +1,21 @@
+#ide directory
+.project
+.classpath
+.settings
+.myelipse
+.idea
+*.db
+*.iml
+Desktop.ini
+node_modules
+
+#build output directory
+build
+target
+classes
+*.class
+*.log
+.externalToolBuilders
+
+#svn
+.svn
