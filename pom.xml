@@ -18,6 +18,7 @@
         <module>socket</module>
         <module>common</module>
         <module>solr</module>
+        <module>mq</module>
     </modules>
 
     <properties>
