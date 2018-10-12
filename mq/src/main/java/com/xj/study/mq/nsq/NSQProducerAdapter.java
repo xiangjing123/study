@@ -40,5 +40,6 @@ public class NSQProducerAdapter implements Producer {
     public static void main(String[] args) {
         NSQProducerAdapter adapter = new NSQProducerAdapter(null);
         adapter.createProducer("测试消息");
+
     }
 }
