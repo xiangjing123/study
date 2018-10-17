@@ -28,4 +28,15 @@
     <welcome-file>/index.jsp</welcome-file>
   </welcome-file-list>
 
+  <!--https 请求-->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>securedapp</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+
 </web-app>

@@ -31,7 +31,7 @@ public class WebSocketTest {
 		this.session = session;
 		webSocketSet.add(this);     //加入set中
 		addOnlineCount();           //在线数加1
-		System.out.println("有新连接加入！当前在线人数为" + getOnlineCount());
+		System.out.println(Thread.currentThread().getName()+" 说:有新连接加入！当前在线人数为" + getOnlineCount());
 	}
 
 	/**
@@ -52,6 +52,7 @@ public class WebSocketTest {
 	@OnMessage
 	public void onMessage(String message, Session session) {
 		System.out.println("来自客户端的消息:" + message);
+        System.out.println(webSocketSet.size());
 		//群发消息
 		for(WebSocketTest item: webSocketSet){
 			try {
