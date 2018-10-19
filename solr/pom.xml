@@ -30,6 +30,11 @@
             <version>${solr.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -30,17 +30,17 @@ public class QuerySolr {
         HttpSolrClient client = builder.build();
 
         SolrQuery params = new SolrQuery("*:*");
-        params.setFields("name", "desc");
-
+        params.setFields("name", "desc","age");
+        params.setFilterQueries("age:23 && !name:王翠山");
+        //params.setParam("age","23");
+        params.addSort("age",SolrQuery.ORDER.desc);
         QueryResponse response = client.query(params);
         SolrDocumentList list = response.getResults();
-        System.out.println(list.size());
         for (SolrDocument document : list) {
-            System.out.println("name=" + document.get("name"));
+            System.out.println("name=" + document.get("name") +":");
+            System.out.print("age=" + document.get("age")+"\t");
+            System.out.print("desc=" + document.get("desc") +"\n");
         }
-        List<User> users = response.getBeans(User.class);
-        System.out.println(response.getStatus());
-        System.out.println(users);
 
     }
 }

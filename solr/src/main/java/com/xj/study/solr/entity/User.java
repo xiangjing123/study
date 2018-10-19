@@ -29,6 +29,9 @@ public class User implements Serializable {
     @Field
     private String desc;
 
+    public User() {
+    }
+
     public User(String name, Integer age, Integer sex, String desc) {
         this.name = name;
         this.age = age;
@@ -66,6 +69,14 @@ public class User implements Serializable {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+    static {
+        System.out.println("类信息被加载");
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println("main 方法被加载");
     }
 
     @Override

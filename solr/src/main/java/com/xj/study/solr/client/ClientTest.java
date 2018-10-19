@@ -22,7 +22,7 @@ public class ClientTest {
 
         HttpSolrClient client = builder.build();
 
-        User user = new User("王翠莲",21,0,"小事一桩");
+        User user = new User("xiangjing",23,1,"小事一桩");
         client.addBean(user);
 
         client.commit();
