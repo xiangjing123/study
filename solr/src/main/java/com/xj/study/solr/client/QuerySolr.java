@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * TODO
+ *
  *
  * @auther: xiangjing
  * @version: 1.0
@@ -30,8 +30,8 @@ public class QuerySolr {
         HttpSolrClient client = builder.build();
 
         SolrQuery params = new SolrQuery("*:*");
-        params.setFields("name", "desc","age");
-        params.setFilterQueries("age:23 && !name:王翠山");
+        params.setFields("name", "desc","age","id","_version_");
+       // params.setFilterQueries("age:23 && !name:王翠山");
         //params.setParam("age","23");
         params.addSort("age",SolrQuery.ORDER.desc);
         QueryResponse response = client.query(params);
@@ -39,6 +39,8 @@ public class QuerySolr {
         for (SolrDocument document : list) {
             System.out.println("name=" + document.get("name") +":");
             System.out.print("age=" + document.get("age")+"\t");
+            System.out.print("id=" + document.get("id")+"\t");
+            System.out.print("version=" + document.get("_version_")+"\t");
             System.out.print("desc=" + document.get("desc") +"\n");
         }
 

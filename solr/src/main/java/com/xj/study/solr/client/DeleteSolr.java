@@ -1,20 +1,19 @@
 package com.xj.study.solr.client;
 
-import com.xj.study.solr.entity.User;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 
 import java.io.IOException;
 
 /**
- * TODO
+ *
  *
  * @auther: xiangjing
  * @version: 1.0
  * @since: 1.0
- * @createTime: 2018-10-18 15:00
+ * @createTime: 2018-10-22 10:21
  */
-public class ClientTest {
+public class DeleteSolr {
 
     public static void main(String[] args) throws IOException, SolrServerException {
 
@@ -22,10 +21,12 @@ public class ClientTest {
 
         HttpSolrClient client = builder.build();
 
-        User user = new User("xiangjing",23,1,"小事一桩");
-        client.addBean(user);
+       // client.deleteById("1");
+        client.deleteByQuery("age:21");
+
 
         client.commit();
+
         client.close();
 
 

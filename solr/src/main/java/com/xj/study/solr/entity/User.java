@@ -16,6 +16,8 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = -3725455075737800159L;
 
+    @Field
+    private String id;
 
     @Field
     private String name;
@@ -32,11 +34,27 @@ public class User implements Serializable {
     public User() {
     }
 
+    public User(String id, String name, Integer age, Integer sex, String desc) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.desc = desc;
+    }
+
     public User(String name, Integer age, Integer sex, String desc) {
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.desc = desc;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
