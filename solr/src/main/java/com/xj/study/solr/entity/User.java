@@ -5,7 +5,7 @@ import org.apache.solr.client.solrj.beans.Field;
 import java.io.Serializable;
 
 /**
- * TODO
+ *
  *
  * @auther: xiangjing
  * @version: 1.0

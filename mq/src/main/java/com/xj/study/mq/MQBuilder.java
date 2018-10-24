@@ -24,7 +24,7 @@ public class MQBuilder {
      * @param message
      * @param type
      */
-    public void provid(MQMessage message, MQEnum type) {
+    public void sendMesage(MQMessage message, MQEnum type) {
         switch (type) {
             case NSQ:
                 BuilderMQ.producter.provide(message);

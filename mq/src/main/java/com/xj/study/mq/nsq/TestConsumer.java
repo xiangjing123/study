@@ -4,7 +4,7 @@ import com.xj.study.mq.MQMessage;
 import com.xj.study.mq.exception.MQException;
 
 /**
- * TODO
+ *
  *
  * @auther: xiangjing
  * @version: 1.0
