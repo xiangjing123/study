@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public class MQConfig implements Serializable {
 
     private static final long serialVersionUID = 8468460050522559446L;
 
-    private List<String> urls;
+    private List<String> urls = new ArrayList<>();
 
     private List<String> takeUrl;
 
@@ -56,5 +57,10 @@ public class MQConfig implements Serializable {
 
     public void setSubTopic(String subTopic) {
         this.subTopic = subTopic;
+    }
+
+    public MQConfig addUrl(String url) {
+        urls.add(url);
+        return this;
     }
 }

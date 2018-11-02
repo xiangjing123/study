@@ -27,6 +27,7 @@ public class NSQMQProducerAdapter extends NSQProducer implements MQProducer {
 
     public NSQMQProducerAdapter(MQConfig config) {
         this.config = config;
+        setAddress();
     }
 
     @Override
